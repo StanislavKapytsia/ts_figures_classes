@@ -21,7 +21,7 @@ export class Triangle implements Figure {
     const sumOfTwoSides = sides.reduce((sum, side) => sum + side, 0) - maxSide;
 
     if (sides.some((side) => side <= 0) || sumOfTwoSides <= maxSide) {
-      throw new Error('invalid data for figure, all side must be > 0 and the biggest one less than sum of other two');
+      throw new Error('Invalid triangle sides: all sides must be > 0, and the largest side must be less than the sum of the other two.');
     }
   }
 
@@ -71,5 +71,5 @@ export class Rectangle implements Figure {
 }
 
 export function getInfo(figure: Figure): string {
-  return `A ${figure.color} ${figure.shape} - ${figure.getArea()}`;
+  return `A ${figure.color} ${figure.shape} - ${figure.getArea()} square units.`;
 }
